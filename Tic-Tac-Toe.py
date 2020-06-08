@@ -89,7 +89,10 @@ def game(self):
             turn = '0'
         else:
             turn = 'X'
-            
+
+        restart_game = input('Do you wish to play again? (y/n): ')
+        if restart_game.upper() == 'Y':
+            game()
 
 if __name__ == "__main__":
     game()
