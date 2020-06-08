@@ -2,10 +2,6 @@
 # Source code at https://medium.com/byte-tales/the-classic-tic-tac-toe-game-in-python-3-1427c68b8874
 
 
-theBoard = {'7':'','8':'','9':'',
-            '4':'','5':'','6':'',
-            '1':'','2':'','3':''}
-
 def print_board(self, board):
     print(board[7] + '|' + board[8] + '|' + board[9])
     print('-+-+-')
@@ -15,6 +11,10 @@ def print_board(self, board):
 
 # This is main function of this game
 def game(self):
+    theBoard = {'7':'','8':'','9':'',
+                '4':'','5':'','6':'',
+                '1':'','2':'','3':''}
+
     turn = 'X'
     count = 0
 
@@ -35,51 +35,61 @@ def game(self):
             continue
 
         # Now we will check if a player has won the game after every move post 5 moves
-        if count>5:
+        if count>=5:
             if theBoard[7] == theBoard[8] == theBoard[9] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[4] == theBoard[5] == theBoard[6] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[1] == theBoard[2] == theBoard[3] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[7] == theBoard[4] == theBoard[1] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[8] == theBoard[5] == theBoard[2] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[9] == theBoard[6] == theBoard[3] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[7] == theBoard[5] == theBoard[3] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             if theBoard[9] == theBoard[5] == theBoard[1] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+                break
             
-            # If game draws
-            if count == 9:
-                print_board()
-                print('\nGame Over\n')
-                print('**** No one has won. Game is a draw. *****')
+        # If game draws
+        if count == 9:
+            print_board()
+            print('\nGame Over\n')
+            print('**** No one has won. Game is a draw. *****')
+            break
 
-            #Change turn after every move
-            if turn == 'X':
-                turn = '0'
-            else:
-                turn = 'X'
+        #Change turn after every move
+        if turn == 'X':
+            turn = '0'
+        else:
+            turn = 'X'
+            
 
 if __name__ == "__main__":
     game()
