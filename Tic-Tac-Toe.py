@@ -29,10 +29,45 @@ def game():
             continue
         elif theBoard[move] == '':
             theBoard[move] = turn
-            count = count + 1
+            count += 1
         else:
             print('That position is already filled. Please choose another position.')
             continue
+
+        # Now we will check if a player has won the game after every move post 5 moves
+        if count>5:
+            if theBoard[7] == theBoard[8] == theBoard[9] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[4] == theBoard[5] == theBoard[6] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[1] == theBoard[2] == theBoard[3] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[7] == theBoard[4] == theBoard[1] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[8] == theBoard[5] == theBoard[2] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[9] == theBoard[6] == theBoard[3] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[7] == theBoard[5] == theBoard[3] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
+            if theBoard[9] == theBoard[5] == theBoard[1] != '':
+                print_board()
+                print('\nGame Over\n')
+                print('**** {turn} has won *****')
 
 
     
