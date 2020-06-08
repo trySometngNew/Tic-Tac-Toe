@@ -75,5 +75,11 @@ def game():
                 print('\nGame Over\n')
                 print('**** No one has won. Game is a draw. *****')
 
+            #Change turn after every move
+            if turn == 'X':
+                turn = '0'
+            else:
+                turn = 'X'
+
 
     
