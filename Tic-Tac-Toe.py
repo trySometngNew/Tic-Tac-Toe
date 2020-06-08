@@ -41,58 +41,58 @@ def game(self):
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[4] == theBoard[5] == theBoard[6] != '':
+            elif theBoard[4] == theBoard[5] == theBoard[6] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[1] == theBoard[2] == theBoard[3] != '':
+            elif theBoard[1] == theBoard[2] == theBoard[3] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[7] == theBoard[4] == theBoard[1] != '':
+            elif theBoard[7] == theBoard[4] == theBoard[1] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[8] == theBoard[5] == theBoard[2] != '':
+            elif theBoard[8] == theBoard[5] == theBoard[2] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[9] == theBoard[6] == theBoard[3] != '':
+            elif theBoard[9] == theBoard[6] == theBoard[3] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[7] == theBoard[5] == theBoard[3] != '':
+            elif theBoard[7] == theBoard[5] == theBoard[3] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
-            if theBoard[9] == theBoard[5] == theBoard[1] != '':
+            elif theBoard[9] == theBoard[5] == theBoard[1] != '':
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
                 break
+            else:
+                #Change turn after every move
+                if turn == 'X':
+                    turn = '0'
+                else:
+                    turn = 'X'
             
-        # If game draws
-        if count == 9:
-            print_board()
-            print('\nGame Over\n')
-            print('**** No one has won. Game is a draw. *****')
-            break
+                # If game draws
+                if count == 9:
+                    print_board()
+                    print('\nGame Over\n')
+                    print('**** No one has won. Game is a draw. *****')
+                    break
 
-        #Change turn after every move
-        if turn == 'X':
-            turn = '0'
-        else:
-            turn = 'X'
-
-        restart_game = input('Do you wish to play again? (y/n): ')
-        if restart_game.upper() == 'Y':
-            game()
+    restart_game = input('Do you wish to play again? (y/n): ')
+    if restart_game.upper() == 'Y':
+        game()
 
 if __name__ == "__main__":
     game()
