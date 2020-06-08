@@ -68,6 +68,12 @@ def game():
                 print_board()
                 print('\nGame Over\n')
                 print('**** {turn} has won *****')
+            
+            # If game draws
+            if count == 9:
+                print_board()
+                print('\nGame Over\n')
+                print('**** No one has won. Game is a draw. *****')
 
 
     
