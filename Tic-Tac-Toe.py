@@ -14,7 +14,7 @@ def print_board(self, board):
     print(board[1] + '|' + board[2] + '|' + board[3])
 
 # This is main function of this game
-def funcname():
+def game():
     turn = 'X'
     count = 0
 
@@ -26,8 +26,10 @@ def funcname():
 
         if move < 1 or move > 9:
             print('Please choose a valid position.')
+            continue
         elif theBoard[move] == '':
             theBoard[move] = turn
+            count = count + 1
         else:
             print('That position is already filled. Please choose another position.')
             continue
